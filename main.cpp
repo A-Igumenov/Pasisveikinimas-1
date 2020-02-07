@@ -2,20 +2,25 @@
 
 using namespace std;
 
-void Iremink(string);
+void Iremink(string, char);
 
 int main()
 {
     string vardas;
-    std::cin>>vardas;
-    Iremink(vardas);
+    cout<<"Iveskite savo varda: \n";
+    cin>>vardas;
+
+    char lytis;
+    cout<<"Iveskite savo lyti: (v arba m) \n";
+    cin>>lytis;
+    Iremink(vardas, lytis);
 }
-void Iremink(string vardas)
+void Iremink(string vardas, char lytis)
 {
     string eil1 = "", eil2 = "", eil3 = "", eil4 = "", eil5 = "";
     int ilgis;
-    string temp = "s";
-    if(vardas[vardas.length()-1] == temp[0])
+
+    if(lytis == 'v')
     {
          ilgis = 2 + 9 + vardas.length() + 3;
     }
@@ -36,7 +41,7 @@ void Iremink(string vardas)
     }
     eil2+= "*";
 
-    if(vardas[vardas.length()-1] == temp[0])
+    if(lytis == 'v')
     {
         eil3+= "* Sveikas, " + vardas + "! *";
     }
