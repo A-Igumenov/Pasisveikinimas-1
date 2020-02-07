@@ -1,62 +1,63 @@
 #include <iostream>
 
 using namespace std;
-
-void Iremink(string, char);
+struct Vizitine
+{
+    string eil1 = "", eil2 = "", eil3 = "";
+    string vardas;
+    char lytis;
+};
+void Iremink(Vizitine);
 
 int main()
 {
-    string vardas;
+    Vizitine viz;
     cout<<"Iveskite savo varda: \n";
-    cin>>vardas;
+    cin>>viz.vardas;
 
-    char lytis;
     cout<<"Iveskite savo lyti: (v arba m) \n";
-    cin>>lytis;
-    Iremink(vardas, lytis);
+    cin>>viz.lytis;
+    Iremink(viz);
 }
-void Iremink(string vardas, char lytis)
+void Iremink(Vizitine viz)
 {
-    string eil1 = "", eil2 = "", eil3 = "", eil4 = "", eil5 = "";
     int ilgis;
 
-    if(lytis == 'v')
+    if(viz.lytis == 'v')
     {
-         ilgis = 2 + 9 + vardas.length() + 3;
+         ilgis = 2 + 9 + viz.vardas.length() + 3;
     }
     else
     {
-         ilgis = 2 + 8 + vardas.length() + 3;
+         ilgis = 2 + 8 + viz.vardas.length() + 3;
     }
 
     for(int i = 0; i< ilgis; i++)
     {
-        eil1 += "*";
+        viz.eil1 += "*";
     }
 
-    eil2 += "*";
+    viz.eil2 += "*";
     for(int i = 0; i< ilgis-2; i++)
     {
-        eil2 += " ";
+        viz.eil2 += " ";
     }
-    eil2+= "*";
+    viz.eil2+= "*";
 
-    if(lytis == 'v')
+    if(viz.lytis == 'v')
     {
-        eil3+= "* Sveikas, " + vardas + "! *";
+        viz.eil3+= "* Sveikas, " + viz.vardas + "! *";
     }
     else
     {
-        eil3+= "* Sveika, " + vardas + "! *";
+        viz.eil3+= "* Sveika, " + viz.vardas + "! *";
     }
 
 
-    eil4 = eil2;
-    eil5 = eil1;
-    cout<<eil1<<endl;
-    cout<<eil2<<endl;
-    cout<<eil3<<endl;
-    cout<<eil4<<endl;
-    cout<<eil5<<endl;
+    cout<<viz.eil1<<endl;
+    cout<<viz.eil2<<endl;
+    cout<<viz.eil3<<endl;
+    cout<<viz.eil2<<endl;
+    cout<<viz.eil1<<endl;
 
 }
