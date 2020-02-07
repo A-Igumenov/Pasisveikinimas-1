@@ -6,6 +6,7 @@ struct Vizitine
     string eil1 = "", eil2 = "", eil3 = "";
     string vardas;
     char lytis;
+    int plotis;
 };
 void Iremink(Vizitine);
 
@@ -17,6 +18,11 @@ int main()
 
     cout<<"Iveskite savo lyti: (v arba m) \n";
     cin>>viz.lytis;
+
+
+    cout<<"Iveskite norima remelio ploti (eiluciu skaiciu turi buti nelyginis) \n";
+    cin>>viz.plotis;
+
     Iremink(viz);
 }
 void Iremink(Vizitine viz)
@@ -53,11 +59,10 @@ void Iremink(Vizitine viz)
         viz.eil3+= "* Sveika, " + viz.vardas + "! *";
     }
 
-
     cout<<viz.eil1<<endl;
-    cout<<viz.eil2<<endl;
+    for(int i=0; i<(viz.plotis-3)/2;i++, cout<<viz.eil2<<endl);
     cout<<viz.eil3<<endl;
-    cout<<viz.eil2<<endl;
+    for(int i=0; i<(viz.plotis-3)/2;i++, cout<<viz.eil2<<endl);
     cout<<viz.eil1<<endl;
 
 }
