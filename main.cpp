@@ -13,7 +13,17 @@ int main()
 void Iremink(string vardas)
 {
     string eil1 = "", eil2 = "", eil3 = "", eil4 = "", eil5 = "";
-    int ilgis = 2 + 9 + vardas.length() + 3;
+    int ilgis;
+    string temp = "s";
+    if(vardas[vardas.length()-1] == temp[0])
+    {
+         ilgis = 2 + 9 + vardas.length() + 3;
+    }
+    else
+    {
+         ilgis = 2 + 8 + vardas.length() + 3;
+    }
+
     for(int i = 0; i< ilgis; i++)
     {
         eil1 += "*";
@@ -26,7 +36,15 @@ void Iremink(string vardas)
     }
     eil2+= "*";
 
-    eil3+= "* Sveikas, " + vardas + "! *";
+    if(vardas[vardas.length()-1] == temp[0])
+    {
+        eil3+= "* Sveikas, " + vardas + "! *";
+    }
+    else
+    {
+        eil3+= "* Sveika, " + vardas + "! *";
+    }
+
 
     eil4 = eil2;
     eil5 = eil1;
